@@ -1,27 +1,12 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 27, 2023 lúc 05:28 PM
--- Phiên bản máy phục vụ: 10.4.27-MariaDB
--- Phiên bản PHP: 7.4.33
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Cơ sở dữ liệu: `btth01_cse485`
 --
-CREATE DATABASE IF NOT EXISTS `btth01_cse485` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `btth01_cse485`;
 
 -- --------------------------------------------------------
 
@@ -39,7 +24,7 @@ CREATE TABLE `baiviet` (
   `ma_tgia` int(11) NOT NULL,
   `ngayviet` datetime NOT NULL DEFAULT current_timestamp(),
   `hinhanh` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `baiviet`
@@ -53,7 +38,6 @@ INSERT INTO `baiviet` (`ma_bviet`, `tieude`, `ten_bhat`, `ma_tloai`, `tomtat`, `
 (5, 'Đất nước', 'Đất nước', 5, 'Đã bao nhiêu lần tôi tự hỏi: liệu trên Thế giới này có nơi nào chiến tranh tang thương mà lại rất đổi anh hùng như nước mình không? Liệu có mảnh đất nào mà mỗi tấc đất hôm nay đã thấm máu xương của những thế hệ đi trước nhiều như nước mình không? Và, liệu có một đất nước nào lại có nhiều bà mẹ đau khổ nhưng cũng hết sức gan góc như đất nước mình không?', NULL, 1, '2010-05-25 00:00:00', ''),
 (6, 'Hard Rock Hallelujah', 'Hard Rock Hallelujah', 7, 'Những linh hồn đang lạc lối, mù quáng mất phương hướng trong cõi trần gian đầy nghiệt ngã hãy nên lắng nghe \"Hard Rock Hallelujah\" để có thể quên tất cả mọi thứ để tìm về đúng bản chất sâu thẳm nhất trong tâm hồn chính mình!', NULL, 6, '2013-09-12 00:00:00', ''),
 (7, 'The Unforgiven', 'The Unforgiven', 7, 'Lâu lắm rồi mới nghe lại The Unforgiven II, vì bài này không phải là bài mà tôi thích. Anh bạn tôi lúc trước, đi đâu cũng nghêu ngao bài này ấy, chỉ tại vì hắn đang... thất tình mà lị. Mà sao Metallica có The Unforgiven rồi lại có thêm bài này chi nữa vậy không biết nữa, làm cho tôi cảm thấy hình như hơi bị đúng so với tâm trạng của tôi lúc này.', NULL, 1, '2010-05-25 00:00:00', ''),
-(8, 'Nơi tình yêu bắt đầu', 'Nơi tình yêu bắt đầu', 1, 'Nhiều người sẽ nghĩ làm gì có yêu nhất và làm gì có yêu mãi. Ừ! Chẳng có gì là mãi mãi cả, vì chúng ta không trường tồn vĩnh cửu', NULL, 1, '2014-02-03 00:00:00', ''),
 (9, 'Love Me Like There’s No Tomorrow', 'Love Me Like There’s No Tomorrow', 8, 'Nếu ai đã từng yêu Queen, yêu cái chất giọng cao, sắc sảo như một vết cắt thật ngọt ẩn giấu bao cảm xúc mãnh liệt của Freddie chắc không thể không \"điêu đứng\" mỗi khi nghe Love Me Like There’s No Tomorrow.', NULL, 1, '2013-02-26 00:00:00', ''),
 (10, 'I\'m stronger', 'I\'m stronger', 7, 'Em không phải là người giỏi giấu cảm xúc, nhưng em lại là người giỏi đoán biết cảm xúc của người khác vậy nên đừng cố nói nhớ em, rằng mọi thứ chỉ là do hoàn cảnh. Và cũng đừng dối em rằng anh đã từng yêu em. Em nhắm mắt cũng cảm nhận được mà, thật đấy', NULL, 2, '2013-08-21 00:00:00', ''),
 (11, 'Ôi Cuộc Sống Mến Thương', 'Ôi Cuộc Sống Mến Thương', 5, 'Có một câu nói như thế này \"Âm nhạc là một cái gì khác lạ mà hầu như tôi muốn nói nó là một phép thần diệu.Vì nó đứng giữa tư tưởng và hiện tượng, tinh thần và vật chất, mọi thứ trung gian mơ hồ thế đó mà không là thế đó giữa các sự vật mà âm nhạc hòa giải\"', NULL, 2, '2011-10-09 00:00:00', ''),
@@ -70,7 +54,7 @@ CREATE TABLE `tacgia` (
   `ma_tgia` int(11) NOT NULL,
   `ten_tgia` varchar(100) NOT NULL,
   `hinh_tgia` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `tacgia`
@@ -95,14 +79,13 @@ INSERT INTO `tacgia` (`ma_tgia`, `ten_tgia`, `hinh_tgia`) VALUES
 CREATE TABLE `theloai` (
   `ma_tloai` int(11) NOT NULL,
   `ten_tloai` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `theloai`
 --
 
 INSERT INTO `theloai` (`ma_tloai`, `ten_tloai`) VALUES
-(1, 'Nhạc trẻ'),
 (2, 'Nhạc trữ tình'),
 (3, 'Nhạc cách mạng'),
 (4, 'Nhạc thiếu nhi'),
@@ -119,10 +102,30 @@ INSERT INTO `theloai` (`ma_tloai`, `ten_tloai`) VALUES
 
 CREATE TABLE `users` (
   `user_id` int(5) NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `usersname` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `level` int(1) DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `users`
+--
+
+INSERT INTO `users` (`user_id`, `email`, `usersname`, `password`, `level`) VALUES
+(7, 'baitaptoan53@gmail.com', 'baitaptoan', '$2y$10$gUfn.m0UJyQslB795xV32eJS1Ds6D1GZ01sMxIpdEpwLfaRPSMd2m', 0),
+(8, 'baitaptoan531@gmail.com', 'baitaptoan1', '$2y$10$6p9dDXktcwiZU1MED1S4I.WmqNpnvoTCOQvaKfJugWeOvXTmuI1hy', 0),
+(9, 'baitaptoan5113@gmail.com', 'baitaptoan111', '$2y$10$GwG/N5Z3gzM1ZaFWxdOafeXeLZNdPhSuyAqUeJAlpSSMT/qfO.JQy', 0),
+(10, 'baitaptoan1153@gmail.com', 'baitaptoan1111111', '$2y$10$7qPMRL4UUZsf8IttlRCyW.aGO5vjeMo43bRCwR4uMi72.1A9y.0XO', 0),
+(11, 'baitaptoan5123@gmail.com', 'baitaptoan213', '$2y$10$2c4C6oKUY8mmp.ZRlcP7fO3r.H.IoVswhUeeManAgxOJAqjrZ5/de', 0),
+(12, 'baitaptoan532131212@gmail.com', 'baitaptoan321312', '$2y$10$AqOP.XVTqQIJmEIt2qtqSuaCLQgD4fn0D9H.90uzIUNgxUlXnTiGG', 0),
+(13, 'baitaptoan522222223@gmail.com', 'baitaptoan2222', '$2y$10$y9jbgkpaOdCbdWQlC2iwheFhVPTyAqm2tCmFCKTdO0AOcAItKTSKS', 0),
+(14, 'baitapto312an53@gmail.com', 'baitaptoan11111112231', '$2y$10$tWicsNRULDPpDV0QP1M/.O0O/o6ESadbvPeRRieSGY0yDwhfoIuoG', 0),
+(15, 'baitaptoassn53@gmail.com', 'baitaptoand', '$2y$10$EGFKm.z43Y4Qmikipvj4berfPNnRSHiE2UmolmyhKAoc2upVuONpC', 0),
+(16, 'baitaptaqoan53@gmail.com', 'baewitaptoan', '$2y$10$Y7oCNqNKNY6BFFH./YpmNON96ohU/Of7w2Vl5o4ao7MDbyUxVdyuO', 0),
+(17, 'baitaptoan5313312@gmail.com', 'baitaptoan3121321', '$2y$10$UuATUZJWPh6ZUv575ufd7.fYzekx.MAJOT3Fdr9Ua7VtMEJZFXhHq', 0),
+(18, 'baitaptoan5a3@gmail.com', 'baitaptoanaa', '$2y$10$qQl61kjRyiocARxjWBzWgOnOASP7srCSYOQaubtF3qUzbnMAfVf6y', 0),
+(19, 'baitaptoa11n53@gmail.com', 'baitaptoan11dsa', '$2y$10$1NSyaI6nh2PhEAFur2sRtOIFuOxcJ3gKKRfZwiuaEPkrSRaLJ3Yce', 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -153,6 +156,16 @@ ALTER TABLE `theloai`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
